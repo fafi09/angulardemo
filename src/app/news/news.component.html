@@ -1,0 +1,32 @@
+<app-header [msg]="msg" [run]="run" (outter)="runParent($event)"></app-header>
+<div [innerHTML]='content'></div>
+<ul>
+  <li *ngFor="let item of list; index as i;first as isFirst">
+    {{item}}--{{i}} <span *ngIf="isFirst">--first</span>
+  </li>
+</ul>
+<input type="text" (keyup) = "onkeyup($event)"/>
+<br/>
+<input type="text" [(ngModel)]="content">
+<br>
+<input type="text" [(ngModel)]="content">
+<br>
+<button (click)="addContent()">添加</button>
+<button (click)="searchTitle()">查询</button>
+<button (click)="searchJsonpTitle()">查询Jsonp</button>
+<button (click)="postTitle()">提交</button>
+<button (click)="getTitlesRxjs()">rsjx提交</button>
+<button (click)='footer.footerRun()'>获取子组件的数据</button>
+<button (click)='runFooter()'>执行footer run</button>
+<ul>
+    <li *ngFor="let item of titles; index as i;first as isFirst">
+      {{item}}--{{i}} <span *ngIf="isFirst">--first</span>
+    </li>
+  </ul>
+  <div> 
+    <ul>
+      <li>{{username}}</li>
+      <li>{{pass}}</li>
+    </ul>
+  </div>
+<app-footer #footer></app-footer>
