@@ -12,6 +12,8 @@ import { StorageService } from './services/storage.service';
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
 import { NewscontentComponent } from './newscontent/newscontent.component';
+import { NewsdetailComponent } from './newsdetail/newsdetail.component';
+import { NewsAuthorComponent } from './news-author/news-author.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +21,9 @@ import { NewscontentComponent } from './newscontent/newscontent.component';
     NewsComponent,
     HomeComponent,
     FooterComponent,
-    NewscontentComponent
+    NewscontentComponent,
+    NewsdetailComponent,
+    NewsAuthorComponent
   ],
   imports: [
     BrowserModule,
