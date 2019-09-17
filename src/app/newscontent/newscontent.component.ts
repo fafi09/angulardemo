@@ -7,6 +7,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 })
 export class NewscontentComponent implements OnInit {
 
+  color:string; //= 'lightgreen';
   id:string;
   constructor(private route: ActivatedRoute) { }
 

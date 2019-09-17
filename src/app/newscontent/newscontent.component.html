@@ -4,5 +4,20 @@
 <a [routerLink]="['./details']">news-detailsss</a>-----------
 <a [routerLink]="['./author']">author</a>
 <br/>
-<a>https://github.com/fafi09/angulardemo.git</a>
+<h4>Pick a highlight color</h4>
+<div>
+  <input type="radio" name="colors" (click)="color='lightgreen'">Green
+  <input type="radio" name="colors" (click)="color='yellow'">Yellow
+  <input type="radio" name="colors" (click)="color='cyan'">Cyan
+</div>
+<br/>
+<a appHighlight [hightlightColor]="color">https://github.com/fafi09/angulardemo.git</a>
+<br/>
+<a appHighlight hightlightColor="red">https://github.com/fafi09/angulardemo.git</a>
+<br/>
+<p [appHighlight]="color">Highlight me!</p>
+<br/>
+<p [appHighlight]="color" defaultColor="violet">
+    Highlight me too!
+  </p>
 <router-outlet></router-outlet>

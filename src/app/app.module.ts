@@ -14,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { NewscontentComponent } from './newscontent/newscontent.component';
 import { NewsdetailComponent } from './newsdetail/newsdetail.component';
 import { NewsAuthorComponent } from './news-author/news-author.component';
+import { HighlightDirective } from './highlight.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { NewsAuthorComponent } from './news-author/news-author.component';
     FooterComponent,
     NewscontentComponent,
     NewsdetailComponent,
-    NewsAuthorComponent
+    NewsAuthorComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
