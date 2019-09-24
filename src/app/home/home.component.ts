@@ -14,6 +14,10 @@ export class HomeComponent implements OnInit {
     this.content = "home";
   }
 
+  changeContent() {
+    this.content = "ddddd";
+  }
+
   goNews() {
     this.router.navigate(['/news']);
   }

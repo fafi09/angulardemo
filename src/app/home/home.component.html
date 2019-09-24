@@ -1,5 +1,8 @@
 <app-header></app-header>
-{{content}}
+<app-com-life-cycle [name]="content"></app-com-life-cycle>
+{{content}}<br/>
 <button (click)='goNews()'>路由的js跳转news</button>
 <button (click)='goNewscontent()'>路由的js跳转Newscontent</button>
 <button (click)='goNewscontentExtra()'>路由的js跳转NewscontentExtra</button>
+
+<button (click)='changeContent()'>改变content</button>
