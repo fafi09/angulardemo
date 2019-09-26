@@ -16,6 +16,11 @@ import { NewsdetailComponent } from './newsdetail/newsdetail.component';
 import { NewsAuthorComponent } from './news-author/news-author.component';
 import { HighlightDirective } from './highlight.directive';
 import { ComLifeCycleComponent } from './com-life-cycle/com-life-cycle.component';
+import { AdDirectiveDirective } from './ad-directive/ad-directive.directive';
+import { AdBannerComponentComponent } from './ad-banner-component/ad-banner-component.component';
+import { HeroJobAdComponentComponent } from './hero-job-ad-component/hero-job-ad-component.component';
+import { HeroProfileComponentComponent } from './hero-profile-component/hero-profile-component.component';
+import { AdServiceService } from "./ad-service/ad-service.service";
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +32,11 @@ import { ComLifeCycleComponent } from './com-life-cycle/com-life-cycle.component
     NewsdetailComponent,
     NewsAuthorComponent,
     HighlightDirective,
-    ComLifeCycleComponent
+    ComLifeCycleComponent,
+    AdDirectiveDirective,
+    AdBannerComponentComponent,
+    HeroJobAdComponentComponent,
+    HeroProfileComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +45,8 @@ import { ComLifeCycleComponent } from './com-life-cycle/com-life-cycle.component
     HttpClientJsonpModule,
     FormsModule
   ],
-  providers: [StorageService],
-  bootstrap: [AppComponent]
+  providers: [StorageService,AdServiceService],
+  bootstrap: [AppComponent],
+  entryComponents: [HeroProfileComponentComponent,HeroJobAdComponentComponent]
 })
 export class AppModule { }
