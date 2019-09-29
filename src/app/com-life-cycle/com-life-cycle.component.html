@@ -6,4 +6,8 @@
   <input #input value="Message">
     <button (click)="popup.showAsComponent(input.value)">Show as component</button>
     <button (click)="popup.showAsElement(input.value)">Show as element</button>
+    <br/>
+    showAsElement出错：Failed to construct HTMLElement: Please use the new operator
+        解决方法：在tsconfig.json中改为
+        target: es2015
 </p>
