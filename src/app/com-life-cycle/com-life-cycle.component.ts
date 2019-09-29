@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, OnChanges, SimpleChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy } from '@angular/core';
+import { PopupService } from '../popup/popup.service';
 
 @Component({
   selector: 'app-com-life-cycle',
@@ -8,7 +9,10 @@ import { Component, Input, OnInit, OnChanges, SimpleChanges, DoCheck, AfterConte
 export class ComLifeCycleComponent implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy  {
   @Input()  name: string;
   private verb = 'initialized';
-  constructor() { }
+
+  constructor(public popup: PopupService) {
+    
+  }
 
   submit():void {
     console.log("submit");

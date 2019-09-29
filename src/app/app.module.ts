@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FormsModule } from '@angular/forms';
 
@@ -21,6 +22,8 @@ import { AdBannerComponentComponent } from './ad-banner-component/ad-banner-comp
 import { HeroJobAdComponentComponent } from './hero-job-ad-component/hero-job-ad-component.component';
 import { HeroProfileComponentComponent } from './hero-profile-component/hero-profile-component.component';
 import { AdServiceService } from "./ad-service/ad-service.service";
+import { PopupComponent } from './popup/popup.component';
+import { PopupService } from "./popup/popup.service";
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,17 +39,19 @@ import { AdServiceService } from "./ad-service/ad-service.service";
     AdDirectiveDirective,
     AdBannerComponentComponent,
     HeroJobAdComponentComponent,
-    HeroProfileComponentComponent
+    HeroProfileComponentComponent,
+    PopupComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     HttpClientJsonpModule,
     FormsModule
   ],
-  providers: [StorageService,AdServiceService],
+  providers: [StorageService,AdServiceService,PopupService],
   bootstrap: [AppComponent],
-  entryComponents: [HeroProfileComponentComponent,HeroJobAdComponentComponent]
+  entryComponents: [HeroProfileComponentComponent,HeroJobAdComponentComponent, PopupComponent]
 })
 export class AppModule { }
