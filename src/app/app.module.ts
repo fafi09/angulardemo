@@ -24,6 +24,7 @@ import { HeroProfileComponentComponent } from './hero-profile-component/hero-pro
 import { AdServiceService } from "./ad-service/ad-service.service";
 import { PopupComponent } from './popup/popup.component';
 import { PopupService } from "./popup/popup.service";
+import { RxjsComponent } from './rxjs/rxjs.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,8 @@ import { PopupService } from "./popup/popup.service";
     AdBannerComponentComponent,
     HeroJobAdComponentComponent,
     HeroProfileComponentComponent,
-    PopupComponent
+    PopupComponent,
+    RxjsComponent
   ],
   imports: [
     BrowserModule,

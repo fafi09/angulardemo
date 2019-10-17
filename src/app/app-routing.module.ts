@@ -6,10 +6,11 @@ import { NewscontentComponent } from './newscontent/newscontent.component';
 import { NewsdetailComponent } from './newsdetail/newsdetail.component';
 import { NewsAuthorComponent } from './news-author/news-author.component';
 import { ComLifeCycleComponent } from './com-life-cycle/com-life-cycle.component';
-
+import { RxjsComponent } from "./rxjs/rxjs.component";
 const routes: Routes = [
   {path:'home',component:HomeComponent},
   {path:'news',component:NewsComponent},
+  {path:'rxjs',component:RxjsComponent},
   {path:'comlifecycle', component:ComLifeCycleComponent},
   {path:'newscontent/:id',component:NewscontentComponent,
     children:[
