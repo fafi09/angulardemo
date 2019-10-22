@@ -25,6 +25,7 @@ import { AdServiceService } from "./ad-service/ad-service.service";
 import { PopupComponent } from './popup/popup.component';
 import { PopupService } from "./popup/popup.service";
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { TreeModule } from "angular-tree-component";
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +43,7 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     HeroJobAdComponentComponent,
     HeroProfileComponentComponent,
     PopupComponent,
-    RxjsComponent
+    RxjsComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,7 +51,8 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     AppRoutingModule,
     HttpClientModule,
     HttpClientJsonpModule,
-    FormsModule
+    FormsModule,
+    TreeModule
   ],
   providers: [StorageService,AdServiceService,PopupService],
   bootstrap: [AppComponent],
