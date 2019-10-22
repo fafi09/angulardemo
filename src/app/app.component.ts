@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,ViewChild } from '@angular/core';
 import { Injector } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
 import { PopupComponent } from './popup/popup.component';
@@ -9,6 +9,7 @@ import { PopupComponent } from './popup/popup.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  @ViewChild('tree') tree;
   title = 'my-app';
   constructor(injector: Injector) {
     // Convert `PopupComponent` to a custom element.
@@ -41,4 +42,8 @@ export class AppComponent {
     }
   ];
   options = {isExpandedField: 'isExpanded', useCheckbox:true};
+
+  ngAfterViewInit() {
+    this.tree.treeModel.expandAll();
+  }
 }
