@@ -2,6 +2,7 @@ import { Component,ViewChild } from '@angular/core';
 import { Injector } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
 import { PopupComponent } from './popup/popup.component';
+import { TREE_ACTIONS, KEYS, IActionMapping, ITreeOptions } from 'angular-tree-component';
 
 @Component({
   selector: 'app-root',
@@ -41,7 +42,42 @@ export class AppComponent {
       ]
     }
   ];
-  options = {isExpandedField: 'isExpanded', useCheckbox:true};
+  options = {isExpandedField: 'isExpanded', useCheckbox:true,
+  useTriState: false, //useCheckbox Disconnecting parent <=> child connection
+  rtl: false,
+  displayField: 'name',
+  actionMapping: {
+    mouse: {
+      dblClick: (tree, node, $event) => {
+        if (node.hasChildren) TREE_ACTIONS.TOGGLE_EXPANDED(tree, node, $event);
+      },
+      //checkboxClick: TREE_ACTIONS.TOGGLE_SELECTED,
+      checkboxClick:(tree, node, $event) => {
+        alert(tree);
+      }
+    },
+    keys: {
+      [KEYS.ENTER]: (tree, node, $event) => {
+        node.expandAll();
+      }
+    }
+  },
+  nodeHeight: 23,
+  allowDrag: (node) => {
+    return true;
+  },
+  allowDrop: (node) => {
+    return true;
+  },
+  allowDragoverStyling: true,
+  levelPadding: 10,
+  useVirtualScroll: true,
+  animateExpand: true,
+  scrollOnActivate: true,
+  animateSpeed: 30,
+  animateAcceleration: 1.2,
+  scrollContainer: document.documentElement // HTML
+};
 
   ngAfterViewInit() {
     this.tree.treeModel.expandAll();
